@@ -18,7 +18,7 @@ Access the iOS environment from React Native.
 ```javascript
 var EnvironmentManager = require('react-native-env');
 
-// set a cookie
+// read an environment variable from React Native
 EnvironmentManager.get('SOME_VARIABLE', function(err, res) {
   console.log('name: '+res); // => SOME_VARIABLE: ooooh fun!
 });
