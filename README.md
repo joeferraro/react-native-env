@@ -19,10 +19,13 @@ Access the iOS environment from React Native.
 var EnvironmentManager = require('react-native-env');
 
 // read an environment variable from React Native
-EnvironmentManager.get('SOME_VARIABLE', function(err, res) {
-  console.log('name: '+res); // => SOME_VARIABLE: ooooh fun!
-});
-
+EnvironmentManager.get('SOME_VARIABLE')
+  .then((val) => {
+    console.log('value of SOME_VARIABLE is: ', val); // => value of SOME_VARIABLE is: MY_VALUE
+  })
+  .catch((err) => {
+    console.error('womp womp: ', err.message);
+  });
 ```
 
 ### Roadmap
