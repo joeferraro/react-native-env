@@ -1,6 +1,6 @@
 {
   "name": "react-native-env",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Environment manager for react native",
   "main": "index.js",
   "author": "@joeferraro",
