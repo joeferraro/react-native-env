@@ -2,9 +2,15 @@ var NativeModules = require('NativeModules');
 var RNEnvironmentManagerIOS = NativeModules.RNEnvironmentManagerIOS;
 
 module.exports = {
-  get(name, callback) {
-    RNEnvironmentManagerIOS.get(name, (err, res) => {
-      callback(err, res);
+  get(name) {
+    return new Promise((resolve, reject) => {
+      RNEnvironmentManagerIOS.get(name, (err, res) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(res);
+        }
+      });
     });
   }
 }
