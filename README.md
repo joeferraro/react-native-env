@@ -7,11 +7,12 @@ Access the iOS environment from React Native.
 1. `npm install react-native-env`
 2. In XCode's "Project navigator", right click on project's name ➜ `Add Files to <...>`
 3. Go to `node_modules` ➜ `react-native-env` ➜ add `RNEnvironmentManagerIOS` folder
-4. Add environment variable(s) to your XCode scheme(s) (see screenshot below)
-4. Compile and have some environment
+4. Add an `environment.plist` to your project containing any key-values to be accessed at runtime.
+5. Compile and have some environment
 
-![screenshot_6_1_15__10_17_pm](https://cloud.githubusercontent.com/assets/54157/7927305/32e65e24-08ac-11e5-9837-9801611fda2f.png)
+### Per-environment Config
 
+Follow the excellent, long tutorial [Migrating iOS App Through Multiple Environments](http://www.blackdogfoundry.com/blog/migrating-ios-app-through-multiple-environments/) to derive `environment.plist` at build-time, based on the selected Xcode scheme.
 
 ### Usage
 
