@@ -7,7 +7,7 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(get:(NSString *)name callback:(RCTResponseSenderBlock)callback) {
     @try {
-        NSDictionary *env = [[NSProcessInfo processInfo] environment];
+        NSDictionary *env = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"environment" ofType:@"plist"]];
         if ([env objectForKey:name]) {
             callback(@[[NSNull null], env[name]]);
         } else {
