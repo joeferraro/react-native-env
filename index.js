@@ -1,4 +1,4 @@
-var NativeModules = require('NativeModules');
+var NativeModules = require('react-native').NativeModules;
 var RNEnvironmentManagerIOS = NativeModules.RNEnvironmentManagerIOS;
 
 module.exports = {
