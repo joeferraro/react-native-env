@@ -12,5 +12,17 @@ module.exports = {
         }
       });
     });
+  },
+
+  getAll() {
+    return new Promise((resolve, reject) => {
+      RNEnvironmentManagerIOS.getAll((err, res) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(res);
+        }
+      });
+    });
   }
 }
