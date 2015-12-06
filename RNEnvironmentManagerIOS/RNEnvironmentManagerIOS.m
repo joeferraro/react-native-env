@@ -11,8 +11,18 @@ RCT_EXPORT_METHOD(get:(NSString *)name callback:(RCTResponseSenderBlock)callback
         if ([env objectForKey:name]) {
             callback(@[[NSNull null], env[name]]);
         } else {
-            callback(@[[NSNull null], [NSNull null]]);      
+            callback(@[[NSNull null], [NSNull null]]);
         }
+    }
+    @catch (NSException *exception) {
+        callback(@[exception.reason, [NSNull null]]);
+    }
+}
+
+RCT_EXPORT_METHOD(getAll:(RCTResponseSenderBlock)callback) {
+    @try {
+        NSDictionary *env = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"environment" ofType:@"plist"]];
+        callback(@[[NSNull null], env]);
     }
     @catch (NSException *exception) {
         callback(@[exception.reason, [NSNull null]]);
