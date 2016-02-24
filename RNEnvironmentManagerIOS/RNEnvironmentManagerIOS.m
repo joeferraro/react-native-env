@@ -29,4 +29,11 @@ RCT_EXPORT_METHOD(getAll:(RCTResponseSenderBlock)callback) {
     }
 }
 
+- (NSDictionary *)constantsToExport
+// Include environment variables so they are available without using a promise.
+{
+  NSDictionary *env = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"environment" ofType:@"plist"]];
+  return env;
+}
+
 @end
