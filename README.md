@@ -27,6 +27,13 @@ EnvironmentManager.get('SOME_VARIABLE')
   .catch((err) => {
     console.error('womp womp: ', err.message);
   });
+
+// Read an environment variable synchronously.
+// Downside of this approach is that if environment.plist
+// changes during runtime, those changes will not be reflected
+// by getSync.
+var val = EnvironmentManager.getSync('SOME_VARIABLE');
+console.log('value of SOME_VARIABLE is: ', val);
 ```
 
 ### Roadmap
