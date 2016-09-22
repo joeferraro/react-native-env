@@ -24,5 +24,10 @@ module.exports = {
         }
       });
     });
+  },
+
+  getSync(name) {
+    if (!RNEnvironmentManagerIOS[name]) console.error('Could not get env var', name, '. Has it been defined in environment.plist?');
+    return RNEnvironmentManagerIOS[name];
   }
 }
